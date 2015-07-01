@@ -1,17 +1,17 @@
 package mluti_team_comm;
-//Protocol to communicate intention to other teammates
+//Protocol to communicate rough plans to other teammates
 //Units are specified as follows:
 //length - milimiters
 //time - seconds
 //angle - radians
 
-//Intention of a list of robots
-message TeamIntention {
-  repeated RobotIntention intentions = 1;
+//Plan of a list of robots
+message TeamPlan {
+  repeated RobotPlan plans = 1;
 }
 
-//Intention of a single robot
-message RobotIntention {
+//Plan of a single robot
+message RobotPlan {
   //ID of the robot from SSL vision
   required uint32 robot_id = 1;
 
@@ -20,13 +20,12 @@ message RobotIntention {
   // 1 - goalie
   // 2 - defense
   // 3 - offense
-  // 4 - ball handler
   optional int32 role = 2;
 
-  //Intended navigation target
+  //Planned navigation target
   optional Pose nav_target = 3;
 
-  //Intended shot target
+  //Planned shot target
   optional Location shot_target = 4;
 }
 
@@ -45,5 +44,3 @@ message Pose {
   //heading of the robot
   optional float heading = 2;
 };
-
-
