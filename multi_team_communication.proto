@@ -1,7 +1,7 @@
-package mluti_team_comm;
+package multi_team_comm;
 //Protocol to communicate rough plans to other teammates
 //Units are specified as follows:
-//length - milimiters
+//length - millimeters
 //time - seconds
 //angle - radians
 
