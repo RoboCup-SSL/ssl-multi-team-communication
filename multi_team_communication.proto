@@ -15,12 +15,15 @@ message RobotPlan {
   //ID of the robot from SSL vision
   required uint32 robot_id = 1;
 
-  //Role that this robot is assuming
-  // 0 - no specified role
-  // 1 - goalie
-  // 2 - defense
-  // 3 - offense
-  optional int32 role = 2;
+  //Different roles a robot can assume
+  enum RobotRole {
+    Default = 0; //no specified role
+    Goalie = 1;
+    Defense = 2;
+    Offense = 3;
+  }
+  //Planned role of this robot
+  optional RobotRole role = 2;
 
   //Planned navigation target
   optional Pose nav_target = 3;
